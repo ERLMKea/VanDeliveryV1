@@ -18,6 +18,14 @@ public class Product {
     private double price;
     private double weight;
 
+    public Set<ProductOrder> getProductOrders() {
+        return productOrders;
+    }
+
+    public void setProductOrders(Set<ProductOrder> productOrders) {
+        this.productOrders = productOrders;
+    }
+
     @OneToMany(mappedBy = "product")
     @JsonBackReference
     private Set<ProductOrder> productOrders = new HashSet<>();
